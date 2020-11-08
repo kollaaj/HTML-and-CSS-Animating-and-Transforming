@@ -1,5 +1,6 @@
 .light body {
     color: #192730;
+    /* light shines in from the left */
     background: radial-gradient(ellipse at left, #e8ebff 0%, #a0e4ff 100%);
     overflow: hidden;
 }
@@ -29,6 +30,7 @@ button {
     background-color: #243844;
 }
 
+/* changes the text content on the button */
 .light button:hover:before {
     content:"Dark mode"
 }

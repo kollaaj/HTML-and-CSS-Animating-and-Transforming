@@ -28,6 +28,7 @@ button {
     background-color: #C8CDCD;
 }
 
+/* changes the text content on the button */
 .dark button:hover:before {
     content:"Light mode"
 }

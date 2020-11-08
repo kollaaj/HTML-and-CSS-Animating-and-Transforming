@@ -23,17 +23,17 @@ document.querySelector('#darklight-toggle').addEventListener('click', () => {
 // Only changes are size and number of stars
 function generateRandomColor() {
   const availableColors = [
-  'pink',
-  'white',
-  'yellow',
-  'orange',
-  'lightblue'
+    'pink',
+    'white',
+    'yellow',
+    'orange',
+    'lightblue'
   ];
   
   // Get number from 0 to 4
-  const index = Math.round( Math.random() * (availableColors.length - 1) )
+  const index = Math.round(Math.random() * (availableColors.length - 1));
         
-  return availableColors[index]
+  return availableColors[index];
 }
 
 function getRandomColors() {
@@ -55,11 +55,10 @@ function addStar() {
   // Define star radius
   const radius = Math.round(Math.random() * 10 + 2);
   star.style.width = radius + 'px';
-    star.style.height = radius + 'px';
+  star.style.height = radius + 'px';
   
   // Define twinkle delay
   star.style.animationDelay = Math.random() * 5 + 's';
-  
   
   // Add it to body
   document.body.appendChild(star);
@@ -76,7 +75,7 @@ function addStar() {
       } else {
         star.style.backgroundColor = starColors[0];
       }
-  }, 3000)
+  }, 3000);
 }
 
 for (let i = 0; i < 200; i++) {
