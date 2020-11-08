@@ -1,0 +1,35 @@
+.light body {
+    color: #192730;
+    background: radial-gradient(ellipse at left, #e8ebff 0%, #a0e4ff 100%);
+    overflow: hidden;
+}
+
+.light header h1 {
+    border: 1px solid black;
+}
+
+.light stars {
+    display: none;
+}
+
+button {
+    background-color: #45B39C;
+}
+
+.light main {
+    background-color: #ffffff;
+}
+
+.light .fly-star {
+    display: none;
+}
+
+.light button:hover {
+    color: #ffffff;
+    background-color: #243844;
+}
+
+.light button:hover:before {
+    content:"Dark mode"
+}
+

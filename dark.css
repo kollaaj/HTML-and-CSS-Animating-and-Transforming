@@ -1,0 +1,33 @@
+.dark body {
+    color: #ffffff;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+}
+
+.dark header h1 {
+    border: 1px solid #ffffff;
+}
+
+button {
+    background-color: #46A993;
+}
+
+.dark main {
+    background-color: #252525;
+}
+
+.dark span {
+    z-index: -1;
+}
+
+.dark img.fly-plane {
+    display: none;
+}
+
+.dark button:hover {
+    background-color: #C8CDCD;
+}
+
+.dark button:hover:before {
+    content:"Light mode"
+}

@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem;
+  perspective: 1000px;
+} 
+
+.logo {
+  font-family: 'Rokkitt', serif;
+  width: 370px;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 30px;
+  line-height: 31.8px;
+  letter-spacing: 40px;
+  text-transform: uppercase; 
+}
+
+.logo:hover {
+  /* Apply animation to element */
+  animation: rotate-logo 2s cubic-bezier(.455,.03,.515,.955);
+  cursor: pointer;
+}
+
+/* Move it (define the animation) */
+@keyframes rotate-logo {
+  0% {transform: rotateX(0)}
+  100% {transform: rotateX(-360deg)}
+}
+
+hr {
+  background-color: black;
+  height: 2px;
+  width: 98%;
+  margin: auto;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  margin: 0 5rem 0 20rem;
+}
+
+.call-to-action {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.main-container p {
+  width: 70%;
+  font-size: 28px;
+  line-height: 30px;
+
+}
+
+/* Start the shake animation and make the animation last 
+for 0.5 seconds When the animation is finished, start again*/
+.main-container p:hover {
+  animation: shake-p 0.5s infinite;
+}
+
+@keyframes shake-p {
+  0%   { transform: translate(2px, 1px)   rotate(0deg);  }
+  10%  { transform: translate(-1px, -2px) rotate(-2deg); }
+  20%  { transform: translate(-3px, 0px)  rotate(1deg);  }
+  30%  { transform: translate(3px,  2px)  rotate(0deg);  }
+  40%  { transform: translate(1px, -1px)  rotate(1deg);  }
+  50%  { transform: translate(-1px, 2px)  rotate(-2deg); }
+  60%  { transform: translate(-3px, 1px)  rotate(0deg);  }
+  70%  { transform: translate(3px, 1px)   rotate(-1deg); }
+  80%  { transform: translate(-1px, -1px) rotate(1deg);  }
+  90%  { transform: translate(1px, 2px)   rotate(0deg);  }
+  100% { transform: translate(1px, -2px)  rotate(-2deg); }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  font-family: 'Rokkitt', serif;
+  font-size: 28px;
+  transition: all 1s;
+}
+
+/* scaling up button on hover*/
+button:hover {
+  transform: scale(1.2);
+}
+
+button:hover p {
+  display: none;
+} 
+
+.wrap {
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+/* falling mountain*/
+.image {
+  width: 800px;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0,0,.44,1.79);
+}
+
+.wrap > img {
+  position: relative;
+  top: -500px;
+  animation-name: fall;
+  animation-duration: 2s;
+}
+
+@keyframes fall {
+  0% {
+    top: -500px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* stolen from Pedros coding class with minor alterations*/
+stars {
+  z-index: -1;
+  position: absolute;
+  display: inline-block;
+  animation: twinkle 3s infinite ease-out;
+  animation-direction: alternate;
+  transition: background-color 3s ease-out;
+  border-radius: 50%;
+}
+
+@keyframes twinkle {
+  from { 
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+} 
+
+/* paper planes*/
+.fly-down {
+  position: absolute;
+  overflow: hidden;
+  height: 112%;
+  width: 100px;
+  top: -3rem;
+  left: 50rem;	
+  transform: rotate(20deg);
+}
+
+/* plane numero uno*/
+.fly-down img.fly-plane {
+  position: absolute;
+  width: 100%;
+  height: 100%;	
+  transform: translateY(-100%);
+  animation: fly-down 8s linear infinite;
+}
+
+.fly-down.one {
+  height: 100%;
+  transform: rotate(-45deg);
+  top: -10rem;
+  left: 100rem;	
+}
+
+/* second plane */
+.fly-down.one img.fly-plane {
+  animation: fly-down 6s linear infinite;
+}
+
+/* same keyframe applied to both planes */
+@keyframes fly-down {
+ 0%   {
+   transform: translateY(-100%);
+  }
+ 100% {
+   transform: translateY(100%);
+  }
+}
+  
+/* shooting stars */
+.fly-right {
+  position: absolute;
+  top: 25rem;
+  width: 100%; 
+  overflow: hidden;
+}
+
+/* first star */
+.fly-right img.fly-star {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  /* Starting position */	
+  transform: translateX(-100%);
+  /* Appling animation*/	
+  animation: fly-star 5s linear infinite;
+}
+
+/* second star */
+.fly-right.one {
+  top: 15rem;
+  height: 100px;
+  width: 100%;
+  transform: rotate(20deg);
+}
+
+.fly-right.one img.fly-star {
+  animation: fly-star 10s linear infinite;
+}
+
+/* applieas to both stars */
+@keyframes fly-star {
+  0%   {
+    transform: translateX(-100%);
+   }
+  100% {
+    transform: translateX(100%);
+   }
+ } 
+
+ footer {
+  height: 100px;
+  overflow: hidden;
+}
+
+.scroll-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* scrolling footer content, same as star */
+.scroll-left ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  transform: translateX(100%);
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0%   {
+    transform: translateX(100%);
+   }
+  100% {
+    transform: translateX(-100%);
+   }
+ } 
