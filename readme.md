@@ -13,7 +13,7 @@ the animations are as follows
 - the shooting stars and paper planes fly across the screen using the animation property and @keyframes rule along with the image of a mountain falling from the sky with some cubic-bezier
 
 The javascript in the project is mostly from Pedros coding class except the dark mode toggle is mine.
-
+This is not mobile friendly
 
 
 Surge link: tedious-rice.surge.sh
